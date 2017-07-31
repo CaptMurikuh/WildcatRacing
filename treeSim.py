@@ -16,6 +16,7 @@ myFont = font.Font(family = "Helvetica", size = 36, weight = "bold")
 def resetSim():
 	global count_flag
 	count_flag = False
+	global count
 	count = 000000
 	reactTime['text'] = "00:00:00"
 	#PRE-STAGE
@@ -59,29 +60,42 @@ def exitProgram():
 
 
 ####    TIMER FUNCTION    ####
-def start():
+def startTimer():
     global count_flag
     count_flag = True
+    global count
     count = 000000
+    lightSequence = True
 
-	time.sleep(1)
-	preStage = tk.Label(win , text = "PRE-STAGE" , font = myFont , relief = "groove" , height =1, width =12 , bg="yellow")
+    time.sleep(1)
+    preStage = tk.Label(win , text = "PRE-STAGE" , font = myFont , relief = "groove" , height =1, width =12 , bg="yellow")
+    preStage.grid(row=3, column=3)
+    win.update()
 
-	time.sleep(3)
-	stage = tk.Label(win , text = "STAGE" , font = myFont , relief = "groove" , height =1, width =12 , bg="yellow")
+    time.sleep(1)
+    stage = tk.Label(win , text = "STAGE" , font = myFont , relief = "groove" , height =1, width =12 , bg="yellow")
+    stage.grid(row=4, column=3)
+    win.update()
 
-	time.sleep(0.5)
-	amber1 = tk.Label(win , text = " " , font = myFont , relief = "groove" , height =1, width =12 , bg="yellow")
+    time.sleep(0.5)
+    amber1 = tk.Label(win , text = " " , font = myFont , relief = "groove" , height =1, width =12 , bg="yellow")
+    amber1.grid(row=5, column=3)
+    win.update()
 
-	time.sleep(0.5)
-	amber2 = tk.Label(win , text = " " , font = myFont , relief = "groove" , height =1, width =12 , bg="grey")
+    time.sleep(0.5)
+    amber2 = tk.Label(win , text = " " , font = myFont , relief = "groove" , height =1, width =12 , bg="yellow")
+    amber2.grid(row=6, column=3)
+    win.update()
 
-	time.sleep(0.5)
-	amber3 = tk.Label(win , text = " " , font = myFont , relief = "groove" , height =1, width =12 , bg="grey")
+    time.sleep(0.5)
+    amber3 = tk.Label(win , text = " " , font = myFont , relief = "groove" , height =1, width =12 , bg="yellow")
+    amber3.grid(row=7, column=3)
+    win.update()
 
-	time.sleep(0.5)
-	green = tk.Label(win , text = " " , font = myFont , relief = "groove" , height =1, width =12 , bg="grey")
-
+    time.sleep(0.5)
+    green = tk.Label(win , text = " " , font = myFont , relief = "groove" , height =1, width =12 , bg="green")
+    green.grid(row=8, column=3)
+    win.update()
 
     while True:
         if count_flag == False:
@@ -94,9 +108,26 @@ def start():
         win.update()
         # increase count
         count += 1
-def stop():
+def stopTimer():
     global count_flag
     count_flag = False
+    global count
+
+    if count == 0:
+        amber1 = tk.Label(win , text = " " , font = myFont , relief = "groove" , height = 1 , width = 12 , bg = "yellow")
+        amber1.grid(row=5, column = 3)
+        amber2 = tk.Label(win , text = " " , font = myFont , relief = "groove" , height = 1 , width = 12 , bg = "yellow")
+        amber2.grid(row=6, column = 3)
+        amber3 = tk.Label(win , text = " " , font = myFont , relief = "groove" , height = 1 , width = 12 , bg = "yellow")
+        amber3.grid(row=7, column = 3)
+        green = tk.Label(win , text = " " , font = myFont , relief = "groove" , height = 1 , width = 12 , bg = "green")
+        green.grid(row=8, column = 3)
+        red = tk.Label(win , text = " " , font = myFont , relief = "groove" , height =1, width =12 , bg="red")
+        red.grid(row=9, column=3)
+        reactTime = tk.Label(win , text = "--:--:--" , font = myFont , height =2, width =12)
+        reactTime.grid(row=2, column=3)
+        win.update()
+
 ####	END TIMER FUNCTION    ####
 
 
@@ -115,12 +146,12 @@ resetButton = tk.Button(win, text = "Reset", font = myFont, command = resetSim, 
 resetButton.grid(row=0, column=0)
 
 #START BUTTON
-startButton = tk.Button(win, text = "Start" , font = myFont, command = start, height =2 , width =4)
+startButton = tk.Button(win, text = "Start" , font = myFont, command = startTimer, height =2 , width =4)
 startButton.grid(row=1, column=0)
 
-#START BUTTON
-stopButton = tk.Button(win, text = "Stop" , font = myFont, command = stop, height =2, width =4)
-stopButton.grid(row=1, column =1)
+#GO BUTTON
+goButton = tk.Button(win, text = "GO!" , font = myFont , command = stopTimer , height =2 , width = 4 , bg="green")
+goButton.grid(row=1, column=1)
 
 #REACTION TIME TIMER
 reactTime = tk.Label(win , text = "00:00:00" , font = myFont , height =2, width =12)
@@ -153,6 +184,5 @@ green.grid(row=8, column=3)
 #RED "LIGHT"
 red = tk.Label(win , text = " " , font = myFont , relief = "groove" , height =1, width =12 , bg="grey")
 red.grid(row=9, column=3)
-
 
 tk.mainloop()
