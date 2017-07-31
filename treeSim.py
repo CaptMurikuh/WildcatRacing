@@ -64,8 +64,24 @@ def start():
     count_flag = True
     count = 000000
 
-	#time.sleep(1)
-	#preStage['bg'] = "yellow"
+	time.sleep(1)
+	preStage = tk.Label(win , text = "PRE-STAGE" , font = myFont , relief = "groove" , height =1, width =12 , bg="yellow")
+
+	time.sleep(3)
+	stage = tk.Label(win , text = "STAGE" , font = myFont , relief = "groove" , height =1, width =12 , bg="yellow")
+
+	time.sleep(0.5)
+	amber1 = tk.Label(win , text = " " , font = myFont , relief = "groove" , height =1, width =12 , bg="yellow")
+
+	time.sleep(0.5)
+	amber2 = tk.Label(win , text = " " , font = myFont , relief = "groove" , height =1, width =12 , bg="grey")
+
+	time.sleep(0.5)
+	amber3 = tk.Label(win , text = " " , font = myFont , relief = "groove" , height =1, width =12 , bg="grey")
+
+	time.sleep(0.5)
+	green = tk.Label(win , text = " " , font = myFont , relief = "groove" , height =1, width =12 , bg="grey")
+
 
     while True:
         if count_flag == False:
@@ -111,31 +127,31 @@ reactTime = tk.Label(win , text = "00:00:00" , font = myFont , height =2, width 
 reactTime.grid(row=2, column=3)
 
 #PRE-STAGE "LIGHT"
-preStage = tk.Label(win , text = "PRE-STAGE" , font = myFont , relief = "groove" , height =1, width =12 , bg="yellow")
+preStage = tk.Label(win , text = "PRE-STAGE" , font = myFont , relief = "groove" , height =1, width =12 , bg="grey")
 preStage.grid(row=3, column=3)
 
 #STAGE "LIGHT"
-stage = tk.Label(win , text = "STAGE" , font = myFont , relief = "groove" , height =1, width =12 , bg="yellow")
+stage = tk.Label(win , text = "STAGE" , font = myFont , relief = "groove" , height =1, width =12 , bg="grey")
 stage.grid(row=4, column=3)
 
 #AMBER1 "LIGHT"
-amber1 = tk.Label(win , text = " " , font = myFont , relief = "groove" , height =1, width =12 , bg="yellow")
+amber1 = tk.Label(win , text = " " , font = myFont , relief = "groove" , height =1, width =12 , bg="grey")
 amber1.grid(row=5, column=3)
 
 #AMBER2 "LIGHT"
-amber2 = tk.Label(win , text = " " , font = myFont , relief = "groove" , height =1, width =12 , bg="yellow")
+amber2 = tk.Label(win , text = " " , font = myFont , relief = "groove" , height =1, width =12 , bg="grey")
 amber2.grid(row=6, column=3)
 
 #AMBER3 "LIGHT"
-amber3 = tk.Label(win , text = " " , font = myFont , relief = "groove" , height =1, width =12 , bg="yellow")
+amber3 = tk.Label(win , text = " " , font = myFont , relief = "groove" , height =1, width =12 , bg="grey")
 amber3.grid(row=7, column=3)
 
 #GREEN "LIGHT"
-green = tk.Label(win , text = " " , font = myFont , relief = "groove" , height =1, width =12 , bg="green")
+green = tk.Label(win , text = " " , font = myFont , relief = "groove" , height =1, width =12 , bg="grey")
 green.grid(row=8, column=3)
 
 #RED "LIGHT"
-red = tk.Label(win , text = " " , font = myFont , relief = "groove" , height =1, width =12 , bg="red")
+red = tk.Label(win , text = " " , font = myFont , relief = "groove" , height =1, width =12 , bg="grey")
 red.grid(row=9, column=3)
 
 
