@@ -12,7 +12,7 @@ win = tk.Tk()
 
 myFont = font.Font(family = "Helvetica", size = 36, weight = "bold")
 
-#RESETTING THE SIM
+####    RESETTING THE SIM    ####
 def resetSim():
 	global count_flag
 	count_flag = False
@@ -45,14 +45,20 @@ def resetSim():
 	#RED
 	red = tk.Label(win , text = " " , font = myFont , relief = "groove" , height =1, width =12 , bg="grey")
 	red.grid(row=9, column=3)
+####    END RESETTING THE SIM    ####
 
-#EXITING THE SIM
+
+
+####	EXITING THE SIM    ####
 def exitProgram():
 	print("Exit Button pressed")
         #GPIO.cleanup()
 	win.quit()
+####    END EXITING THE SIM    ####
 
-#TIMER FUNCTION
+
+
+####    TIMER FUNCTION    ####
 def start():
     global count_flag
     count_flag = True
@@ -75,7 +81,10 @@ def start():
 def stop():
     global count_flag
     count_flag = False
+####	END TIMER FUNCTION    ####
 
+
+#######         INITIALIZING MAIN GUI WINDOW        ########
 
 #MAIN WINDOW TITLE
 win.title("Wildcat Racing TreeSim")
@@ -101,36 +110,33 @@ stopButton.grid(row=1, column =1)
 reactTime = tk.Label(win , text = "00:00:00" , font = myFont , height =2, width =12)
 reactTime.grid(row=2, column=3)
 
-#PRE-STAGE
+#PRE-STAGE "LIGHT"
 preStage = tk.Label(win , text = "PRE-STAGE" , font = myFont , relief = "groove" , height =1, width =12 , bg="yellow")
 preStage.grid(row=3, column=3)
 
-#STAGE
+#STAGE "LIGHT"
 stage = tk.Label(win , text = "STAGE" , font = myFont , relief = "groove" , height =1, width =12 , bg="yellow")
 stage.grid(row=4, column=3)
 
-#AMBER1
+#AMBER1 "LIGHT"
 amber1 = tk.Label(win , text = " " , font = myFont , relief = "groove" , height =1, width =12 , bg="yellow")
 amber1.grid(row=5, column=3)
 
-#AMBER2
+#AMBER2 "LIGHT"
 amber2 = tk.Label(win , text = " " , font = myFont , relief = "groove" , height =1, width =12 , bg="yellow")
 amber2.grid(row=6, column=3)
 
-#AMBER3
+#AMBER3 "LIGHT"
 amber3 = tk.Label(win , text = " " , font = myFont , relief = "groove" , height =1, width =12 , bg="yellow")
 amber3.grid(row=7, column=3)
 
-#GREEN
+#GREEN "LIGHT"
 green = tk.Label(win , text = " " , font = myFont , relief = "groove" , height =1, width =12 , bg="green")
 green.grid(row=8, column=3)
 
-#RED
+#RED "LIGHT"
 red = tk.Label(win , text = " " , font = myFont , relief = "groove" , height =1, width =12 , bg="red")
 red.grid(row=9, column=3)
 
 
 tk.mainloop()
-
-
-#TEST
