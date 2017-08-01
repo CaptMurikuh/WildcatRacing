@@ -155,7 +155,7 @@ goButton.grid(row=1, column=1)
 
 #REACTION TIME TIMER
 reactTime = tk.Label(win , text = "00:00:00" , font = myFont , height =2, width =12)
-reactTime.grid(row=2, column=3)
+reactTime.grid(row=5, column=1)
 
 #PRE-STAGE "LIGHT"
 preStage = tk.Label(win , text = "PRE-STAGE" , font = myFont , relief = "groove" , height =1, width =12 , bg="grey")
