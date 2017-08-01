@@ -10,7 +10,7 @@ GPIO.output(40, GPIO.LOW)
 """
 win = tk.Tk()
 
-myFont = font.Font(family = "Helvetica", size = 36, weight = "bold")
+myFont = font.Font(family = "Helvetica", size = 20, weight = "bold")
 
 ####    RESETTING THE SIM    ####
 def resetSim():
@@ -135,11 +135,10 @@ def stopTimer():
 
 #MAIN WINDOW TITLE
 win.title("Wildcat Racing TreeSim")
-#win.geometry('800x480')
-win.geometry('320x192')
+win.geometry('800x480')
 
 #EXIT BUTTON
-exitButton  = tk.Button(win, text = "Exit", font = myFont, command = exitProgram, height =2 , width = 6)
+exitButton  = tk.Button(win, text = "Exit", font = myFont, command = exitProgram, height =1 , width = 2)
 exitButton.grid(row=0, column=1)
 
 #RESET BUTTON
