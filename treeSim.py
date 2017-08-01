@@ -135,7 +135,8 @@ def stopTimer():
 
 #MAIN WINDOW TITLE
 win.title("Wildcat Racing TreeSim")
-win.geometry('800x480')
+#win.geometry('800x480')
+win.geometry('320x192')
 
 #EXIT BUTTON
 exitButton  = tk.Button(win, text = "Exit", font = myFont, command = exitProgram, height =2 , width = 6)
