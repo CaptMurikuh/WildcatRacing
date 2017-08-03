@@ -21,31 +21,31 @@ def resetSim():
 	reactTime['text'] = "00:00:00"
 	#PRE-STAGE
 	preStage = tk.Label(win , text = "PRE-STAGE" , font = myFont , relief = "groove" , height =1, width =12 , bg="grey")
-	preStage.grid(row=3, column=3)
+	preStage.grid(row=1, column=3)
 
 	#STAGE
 	stage = tk.Label(win , text = "STAGE" , font = myFont , relief = "groove" , height =1, width =12 , bg="grey")
-	stage.grid(row=4, column=3)
+	stage.grid(row=2, column=3)
 
 	#AMBER1
 	amber1 = tk.Label(win , text = " " , font = myFont , relief = "groove" , height =1, width =12 , bg="grey")
-	amber1.grid(row=5, column=3)
+	amber1.grid(row=3, column=3)
 
 	#AMBER2
 	amber2 = tk.Label(win , text = " " , font = myFont , relief = "groove" , height =1, width =12 , bg="grey")
-	amber2.grid(row=6, column=3)
+	amber2.grid(row=4, column=3)
 
 	#AMBER3
 	amber3 = tk.Label(win , text = " " , font = myFont , relief = "groove" , height =1, width =12 , bg="grey")
-	amber3.grid(row=7, column=3)
+	amber3.grid(row=5, column=3)
 
 	#GREEN
 	green = tk.Label(win , text = " " , font = myFont , relief = "groove" , height =1, width =12 , bg="grey")
-	green.grid(row=8, column=3)
+	green.grid(row=6, column=3)
 
 	#RED
 	red = tk.Label(win , text = " " , font = myFont , relief = "groove" , height =1, width =12 , bg="grey")
-	red.grid(row=9, column=3)
+	red.grid(row=7, column=3)
 ####    END RESETTING THE SIM    ####
 
 
@@ -69,32 +69,32 @@ def startTimer():
 
     time.sleep(1)
     preStage = tk.Label(win , text = "PRE-STAGE" , font = myFont , relief = "groove" , height =1, width =12 , bg="yellow")
-    preStage.grid(row=1, column=5)
+    preStage.grid(row=1, column=3)
     win.update()
 
     time.sleep(1)
     stage = tk.Label(win , text = "STAGE" , font = myFont , relief = "groove" , height =1, width =12 , bg="yellow")
-    stage.grid(row=2, column=5)
+    stage.grid(row=2, column=3)
     win.update()
 
     time.sleep(0.5)
     amber1 = tk.Label(win , text = " " , font = myFont , relief = "groove" , height =1, width =12 , bg="yellow")
-    amber1.grid(row=3, column=5)
+    amber1.grid(row=3, column=3)
     win.update()
 
     time.sleep(0.5)
     amber2 = tk.Label(win , text = " " , font = myFont , relief = "groove" , height =1, width =12 , bg="yellow")
-    amber2.grid(row=4, column=5)
+    amber2.grid(row=4, column=3)
     win.update()
 
     time.sleep(0.5)
     amber3 = tk.Label(win , text = " " , font = myFont , relief = "groove" , height =1, width =12 , bg="yellow")
-    amber3.grid(row=5, column=5)
+    amber3.grid(row=5, column=3)
     win.update()
 
     time.sleep(0.5)
     green = tk.Label(win , text = " " , font = myFont , relief = "groove" , height =1, width =12 , bg="green")
-    green.grid(row=6, column=5)
+    green.grid(row=6, column=3)
     win.update()
 
     while True:
@@ -115,17 +115,17 @@ def stopTimer():
 
     if count == 0:
         amber1 = tk.Label(win , text = " " , font = myFont , relief = "groove" , height = 1 , width = 12 , bg = "yellow")
-        amber1.grid(row=3, column = 5)
+        amber1.grid(row=3, column = 3)
         amber2 = tk.Label(win , text = " " , font = myFont , relief = "groove" , height = 1 , width = 12 , bg = "yellow")
-        amber2.grid(row=4, column = 5)
+        amber2.grid(row=4, column = 3)
         amber3 = tk.Label(win , text = " " , font = myFont , relief = "groove" , height = 1 , width = 12 , bg = "yellow")
-        amber3.grid(row=5, column = 5)
+        amber3.grid(row=5, column = 3)
         green = tk.Label(win , text = " " , font = myFont , relief = "groove" , height = 1 , width = 12 , bg = "green")
-        green.grid(row=6, column = 5)
+        green.grid(row=6, column = 3)
         red = tk.Label(win , text = " " , font = myFont , relief = "groove" , height =1, width =12 , bg="red")
         red.grid(row=7, column=3)
         reactTime = tk.Label(win , text = "--:--:--" , font = myFont , height =2, width =12)
-        reactTime.grid(row=2, column=5)
+        reactTime.grid(row=0, column=3)
         win.update()
 
 ####	END TIMER FUNCTION    ####
@@ -155,34 +155,34 @@ goButton.grid(row=1, column=1)
 
 #REACTION TIME TIMER
 reactTime = tk.Label(win , text = "00:00:00" , font = myFont , height =2, width =12)
-reactTime.grid(row=5, column=1)
+reactTime.grid(row=0, column=3)
 
 #PRE-STAGE "LIGHT"
 preStage = tk.Label(win , text = "PRE-STAGE" , font = myFont , relief = "groove" , height =1, width =12 , bg="grey")
-preStage.grid(row=1, column=5)
+preStage.grid(row=1, column=3)
 
 #STAGE "LIGHT"
 stage = tk.Label(win , text = "STAGE" , font = myFont , relief = "groove" , height =1, width =12 , bg="grey")
-stage.grid(row=2, column=5)
+stage.grid(row=2, column=3)
 
 #AMBER1 "LIGHT"
 amber1 = tk.Label(win , text = " " , font = myFont , relief = "groove" , height =1, width =12 , bg="grey")
-amber1.grid(row=3, column=5)
+amber1.grid(row=3, column=3)
 
 #AMBER2 "LIGHT"
 amber2 = tk.Label(win , text = " " , font = myFont , relief = "groove" , height =1, width =12 , bg="grey")
-amber2.grid(row=4, column=5)
+amber2.grid(row=4, column=3)
 
 #AMBER3 "LIGHT"
 amber3 = tk.Label(win , text = " " , font = myFont , relief = "groove" , height =1, width =12 , bg="grey")
-amber3.grid(row=5, column=5)
+amber3.grid(row=5, column=3)
 
 #GREEN "LIGHT"
 green = tk.Label(win , text = " " , font = myFont , relief = "groove" , height =1, width =12 , bg="grey")
-green.grid(row=6, column=5)
+green.grid(row=6, column=3)
 
 #RED "LIGHT"
 red = tk.Label(win , text = " " , font = myFont , relief = "groove" , height =1, width =12 , bg="grey")
-red.grid(row=7, column=5)
+red.grid(row=7, column=3)
 
 tk.mainloop()
