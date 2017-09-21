@@ -14,6 +14,8 @@ myFont = font.Font(family = "Helvetica", size = 20, weight = "bold")
 
 ####    RESETTING THE SIM    ####
 def resetSim():
+	global position
+	position = 0
 	global count_flag
 	count_flag = False
 	global count
@@ -46,6 +48,14 @@ def resetSim():
 	#RED
 	red = tk.Label(win , text = " " , font = myFont , relief = "groove" , height =1, width =12 , bg="grey")
 	red.grid(row=7, column=3)
+
+	#CAR POSITION
+	pos = tk.Label(win, text = str(position) + " ft" , font = myFont , height = 1 , width = 12)
+	pos.grid(row=9, column=3)
+
+	#GAS PEDAL
+	gas = tk.Button(win, text = "GAS", font = myFont , command = carPos(1 , 0) , height = 2, width = 4, bg = 'blue')
+	gas.grid(row = 9, column = 2)
 ####    END RESETTING THE SIM    ####
 
 
@@ -130,8 +140,21 @@ def stopTimer():
 
 ####	END TIMER FUNCTION    ####
 
+###		POSITION FUNCTION	 ###
+def carPos(gas, brake):
+	if(gas == 1):
+		global position
+		position = position + 1
+		pos['text'] = str(position) + " ft"
+		win.update()
+		return;
+
+###		END POSITION FUNCTION	###
 
 #######         INITIALIZING MAIN GUI WINDOW        ########
+
+global position
+position = 0
 
 #MAIN WINDOW TITLE
 win.title("Wildcat Racing TreeSim")
@@ -184,5 +207,19 @@ green.grid(row=6, column=3)
 #RED "LIGHT"
 red = tk.Label(win , text = " " , font = myFont , relief = "groove" , height =1, width =12 , bg="grey")
 red.grid(row=7, column=3)
+
+#CAR POSITION
+pos = tk.Label(win, text = str(position) + " ft" , font = myFont , height = 1 , width = 12)
+pos.grid(row=9, column=3)
+
+#GAS PEDAL
+gas = tk.Button(win, text = "GAS", font = myFont , command = carPos(0 , 0) , height = 2, width = 4, bg = 'blue')
+gas.grid(row = 9, column = 2)
+
+
+
+
+
+
 
 tk.mainloop()
