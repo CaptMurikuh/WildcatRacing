@@ -1250,7 +1250,7 @@
      <x>0</x>
      <y>0</y>
      <width>819</width>
-     <height>20</height>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuWildcat_Racing_Reaction_Timer">
@@ -1272,22 +1272,5 @@
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources/>
- <connections>
-  <connection>
-   <sender>exitButton</sender>
-   <signal>clicked()</signal>
-   <receiver>MainWindow</receiver>
-   <slot>close()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>261</x>
-     <y>64</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>518</x>
-     <y>67</y>
-    </hint>
-   </hints>
-  </connection>
- </connections>
+ <connections/>
 </ui>

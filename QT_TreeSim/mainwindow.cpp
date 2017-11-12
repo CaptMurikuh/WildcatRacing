@@ -25,6 +25,28 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(ui->stopButton, SIGNAL(clicked(bool)), this, SLOT(stopClock()));
     connect(ui->fwdButton, SIGNAL(clicked(bool)), this, SLOT(moveFwd()));
     connect(ui->aftButton, SIGNAL(clicked(bool)), this, SLOT(moveAft()));
+    connect(ui->exitButton, SIGNAL(clicked(bool)), this, SLOT(exit()));
+
+    //Export GPIO
+    gpioPreStage->export_gpio();
+    gpioStage->export_gpio();
+    gpioAmber1->export_gpio();
+    gpioAmber2->export_gpio();
+    gpioAmber3->export_gpio();
+    gpioGo->export_gpio();
+    gpioFalseStart->export_gpio();
+
+    //Set GPIO pin directions
+    gpioPreStage->setdir_gpio("out");
+    gpioStage->setdir_gpio("out");
+    gpioAmber1->setdir_gpio("out");
+    gpioAmber2->setdir_gpio("out");
+    gpioAmber2->setdir_gpio("out");
+    gpioAmber3->setdir_gpio("out");
+    gpioGo->setdir_gpio("out");
+    gpioFalseStart->setdir_gpio("out");
+
+
 }
 
 MainWindow::~MainWindow()
@@ -109,8 +131,6 @@ void MainWindow::resetClock()
     ui->amberLight_3->setStyleSheet("QLabel { background-color : rgb(255, 255, 220)}");
     ui->goLight->setStyleSheet("QLabel { background-color : rgb(120, 170, 120)}");
     ui->falseStartLight->setStyleSheet("QLabel { background-color: rgb(255, 175, 175)}");
-
-
 }
 
 void MainWindow::moveFwd()
@@ -123,6 +143,7 @@ void MainWindow::moveAft()
 {
     position--;
     updatePosition(position);
+    gpioPreStage->setval_gpio("1");
 }
 
 void MainWindow::startSeq()
@@ -137,4 +158,40 @@ void MainWindow::startSeq()
     Sleeper::msleep(500);
     ui->goLight->setStyleSheet("QLabel { background-color : green}");
     startClock();
+}
+
+void MainWindow::exit()
+{
+    //Unallocating GPIO
+    gpioPreStage->unexport_gpio();
+    gpioStage->unexport_gpio();
+    gpioAmber1->unexport_gpio();
+    gpioAmber2->unexport_gpio();
+    gpioAmber3->unexport_gpio();
+    gpioGo->unexport_gpio();
+    gpioFalseStart->unexport_gpio();
+
+    delete gpioPreStage;
+    gpioPreStage = 0;
+
+    delete gpioStage;
+    gpioStage = 0;
+
+    delete gpioAmber1;
+    gpioAmber1 = 0;
+
+    delete gpioAmber2;
+    gpioAmber2 = 0;
+
+    delete gpioAmber3;
+    gpioAmber3 = 0;
+
+    delete gpioGo;
+    gpioGo = 0;
+
+    delete gpioFalseStart;
+    gpioFalseStart = 0;
+
+    close();
+
 }

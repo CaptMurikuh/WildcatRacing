@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QThread>
+#include "GPIOClass.h"
 
 namespace Ui {
 class MainWindow;
@@ -18,6 +19,14 @@ public:
     QTime *t;
     void startSeq();
 
+    //Registering GPIO
+    GPIOClass* gpioPreStage = new GPIOClass("6");
+    GPIOClass* gpioStage = new GPIOClass("13");
+    GPIOClass* gpioAmber1 = new GPIOClass("19");
+    GPIOClass* gpioAmber2 = new GPIOClass("16");
+    GPIOClass* gpioAmber3 = new GPIOClass("26");
+    GPIOClass* gpioGo = new GPIOClass("20");
+    GPIOClass* gpioFalseStart = new GPIOClass("21");
 
 
 public slots:
@@ -27,6 +36,7 @@ public slots:
     void resetClock();
     void moveFwd();
     void moveAft();
+    void exit();
 
 private:
     Ui::MainWindow *ui;
